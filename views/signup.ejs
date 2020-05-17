@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/signup.js"></script>
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/signup.css" type="text/css" />
+    <link href="/styles/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <header></header>
+  <body>
+    <%- include('./partials/_loginHeader') %>
+    <form id="sign-up" method="POST" action="/signup">
+      <h2>Sign Up</h2>
+      <input type="email" name="email" placeholder="example@email.com" />
+      <button id='signup-button'type="submit">Sign up</button>
+
+
+     <h3>Please choose 3 Topics</h3>
+      <ul>
+        <li>
+          <select name="topics1" id="topic-select-1">
+            <option value="">Topic 1</option>
+            <%for (let topic of topics) { %>
+            <option value="<%= topic.id %>"> <%= topic.name %></option>
+            <% } %>
+          </select>
+        </li>
+        <li>
+          <select name="topics2" id="topic-select-2">
+            <option value="">Topic 2</option>
+            <%for (let topic of topics) { %>
+            <option value="<%= topic.id %>"> <%= topic.name %></option>
+            <% } %>
+          </select>
+        </li>
+        <li>
+          <select name="topics3" id="topic-select-3">
+            <option value="">Topic 3</option>
+            <%for (let topic of topics) { %>
+            <option value="<%= topic.id %>"> <%= topic.name %></option>
+            <% } %>
+          </select>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

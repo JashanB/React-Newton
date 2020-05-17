@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Upload Resource</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/upload.js"></script>
+
+    <link href="/styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/upload.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <%- include('./partials/_header') %>
+    <article class="upload-resource">
+    <h1>Upload Resource</h1>
+      <form id="upload" action="/upload" method="POST">
+        Enter a title<br>
+        <textarea id="resource-title" type="text"  name="title" rows='1'placeholder="Your resource title here"></textarea><br>
+        Describe your resource<br>
+        <textarea rows="3" id="resource-description" name="description" placeholder="What's your resource all about?!"></textarea><br>
+        Enter an image URL for your resource<br>
+        <input type="URL" name="imageURL" value="http://" placeholder="http://"><br>
+        Enter the link to your resource <br>
+        <input type="URL" name="resourceURL" value="http://" placeholder="http://"><br>
+
+        <select name="topic" id="topic-select">
+          <option value="">Choose a Topic</option>
+          <%for (let topic of resource.topics) { %>
+          <option value="<%= topic.id %>"> <%= topic.name %></option>
+          <% } %>
+        </select><br>
+        <button id="upload-submit" type="submit" >Submit</button>
+      </form>
+    </article>
+  </body>
+</html>

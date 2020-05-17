@@ -1,0 +1,43 @@
+.login {
+  background-color: #f5faff;
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  max-width: 500px;
+  margin: 30px auto ;
+}
+
+
+ h1 {
+  margin: 1em 0 ;
+  font-size: 2em;
+}
+
+.login-form {
+  height: 3em;
+  font-size: 1em;
+  padding-left: 1em;
+
+
+}
+
+ input {
+  margin: 0px;
+  width: 20em
+}
+
+
+button.login-form {
+  background-color: rgb(172, 172, 172);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+button.login-form:hover {
+  background-color: rgb(113, 113, 113);
+}

@@ -1,0 +1,25 @@
+.upload-resource button {
+  background-color: #0F4C75;
+  border: none;
+  color: rgb(242, 242, 242);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  position: fixed;
+  z-index: 99;
+  cursor: pointer;
+  bottom: 1%;
+  right: 1.5%;
+  border-radius: 50%;
+  font-size: 2em;
+  font-weight: bold;
+  height: 2em;
+  width: 2em;
+  line-height: .9em;
+  text-align:center;
+}
+
+

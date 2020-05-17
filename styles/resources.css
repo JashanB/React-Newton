@@ -1,0 +1,117 @@
+body {
+  background-color: rgb(213, 213, 213);
+  font-size: 1em;
+}
+
+.resource {
+  margin: 0% 20%;
+  padding: 0 5%;
+  padding-bottom: 3%;
+  background-color: white;
+  height: 100%;
+}
+
+.img {
+  padding: 1em;
+}
+
+
+.resource-img {
+  max-width: 60%;
+  max-height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 2px black solid;
+}
+
+.likes-ratings {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.likes-ratings button {
+  width: fit-content;
+  margin: 1em 0;
+  background-color: transparent;
+  border: none;
+  padding: 0 2em;
+  outline-width: 0;
+  cursor: pointer;
+}
+
+
+
+.comment {
+  border: 1px black solid;
+  margin: 1em 0 10px 0;
+  padding: 10px;
+}
+
+.comment header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+}
+
+.resource-link {
+  padding: 0.5em 0 2em 0;
+}
+
+.resource-title {
+  margin-top: .5em;
+  font-size: 2em;
+}
+
+.resource-desciption {
+  padding-bottom: 10em;
+}
+
+
+a {
+  font-size: 0.9em;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: grey;
+}
+
+.resource-comemnts button {
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+  background-color: #e7e7e7;
+  cursor: pointer;
+  position: relative;
+  bottom: 0.6em;
+  left: 1em;
+  padding: 0.3em;
+
+}
+textarea {
+  margin-top: 3em;
+  background-color: #fff;
+  border: none;
+  width: 60%;
+  border: 1px black solid;
+  border-bottom: 3px black solid;
+
+  resize: none;
+  font-size: 1em;
+  padding:1em 0 .5em .5em;
+}
+
+textarea:focus {
+  outline-width: 0;
+}
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+.text-area {
+  width: 80%;
+}

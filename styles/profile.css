@@ -1,0 +1,75 @@
+#updated-email-message {
+  display: none;
+}
+
+.profile {
+  background-color: #f5faff;
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  max-width: 500px;
+  margin: 50px auto 0 ;
+}
+
+
+.profile h1 {
+  margin-top: 2em;
+  font-size: 2em;
+}
+
+h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+input {
+  height: 3em;
+  width: 20em;
+  font-size: 1em;
+  padding-left: 1em;
+}
+
+button.email-form {
+  background-color: rgb(172, 172, 172);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+button.email-form:hover {
+  background-color: rgb(113, 113, 113);
+}
+
+
+
+.remove-form {
+  display: inline-block;
+  margin: em;
+}
+.remove-button {
+  background-color: white;
+  color: black;
+  border: 2px solid #000;
+  padding-left: .5em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#x {
+  background-color:rgb(183, 56, 56);
+  font-weight: bold;
+  padding:0 .5em;
+  margin: 0;
+  color: #fff;
+  border: 2.5px  rgb(183, 56, 56) solid;
+}
+
+.edit-box {
+  margin-bottom: 2em;
+  margin-top: 2em;
+
+}

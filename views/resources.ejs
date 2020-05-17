@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link href="/styles/style.css" rel="stylesheet" type="text/css" >
+    <link href="/styles/resources.css" rel="stylesheet" type="text/css" >
+    <title>Resources</title>
+
+
+
+
+
+
+<% for(const like in resource.data.likes) { %>
+  <% if (resource.data.likes[like].user_id === resource.userId) { %>
+      <style>
+        .heart {
+         fill: rgb(173, 25, 73)
+        }
+
+      </style>
+      <% } %>
+    <% } %>
+
+    <% for(const rate in resource.data.ratings) { %>
+      <% if (resource.data.ratings[rate].user_id === resource.userId) { %>
+          <style>
+            .up {
+              fill: gold;
+            }
+
+          </style>
+          <% } %>
+        <% } %>
+
+
+
+  </head>
+
+  <body>
+    <%- include('./partials/_header') %>
+    <%- include('./partials/_uploadResource') %>
+
+
+
+    <section class="resource">
+
+      <div class="img">
+        <img class="resource-img" src=<%= resource.data.resourceInfo.img_url %>  />
+      </div>
+
+      <section class="likes-ratings">
+
+        <form method="POST" action="/resources/rating/<%=resource.data.resourceInfo.id%>?_method=PUT">
+          <button type='submit' class="hvr-float"><svg class="up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg></button>
+           <% if (!resource.data.ratings[0]) { %>
+                0
+            <% } else { %>
+
+              <%= resource.data.ratings[0].count %>
+
+            <% } %>
+        </form>
+
+        <form method="POST" action="/resources/like/<%=resource.data.resourceInfo.id%>?_method=PUT">
+          <button class="hvr-grow" type='submit'> <svg class='heart' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg> </button>
+        </form>
+      </section>
+
+      <h1 class="resource-title"><%= resource.data.resourceInfo.title %></h1>
+
+      <div class="resource-link">
+      <a id="url" href=<%= resource.data.resourceInfo.url %>><%= resource.data.resourceInfo.url %></a>
+      </div>
+
+      <p id="resource-desciption"> <%= resource.data.resourceInfo.description %></p>
+
+
+    <section class="resource-comemnts">
+      <article class="new-comment-box">
+        <form action="comment/<%= resource.data.resourceInfo.id %>?_method=PUT" method="POST">
+          <textarea class="text-area" rows="1" name="comment" type="text" ></textarea>
+          <button id="comment-button" type="submit" value="submit">Comment</button>
+        </form>
+      </article>
+      <% for(const comment in resource.data.comments) { %>
+        <article class="comment">
+          <header>
+            <h1><%= resource.data.comments[comment].email %></h1>
+            <h4><%= resource.data.comments[comment].comment_date %></h4>
+          </header>
+          <section>
+            <p><%= resource.data.comments[comment].text %></p>
+          </section>
+        </article>
+        <% } %>
+
+    </section>
+
+    <p></p>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Profile</title>
+
+    <link href="/styles/style.css" rel="stylesheet" type="text/css" >
+    <link href="/styles/myResources.css" rel="stylesheet" type="text/css" >
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <%- include('./partials/_header') %>
+    <%- include('./partials/_uploadResource') %>
+    <div class="wrap">
+        <div class="search">
+          <form class="search-bar" method="POST" action="/myResources/search/<%=resource.userId%>">
+            <input name="search" class="search-input" type="text">
+              <i class="fa fa-search"></i>
+          </form>
+        </div>
+      </div>
+    <h1 class="resource-header">Liked resources</h1>
+    <section class="resource-container">
+        <% for (let i = 0; i < resource.liked.length; i++) { %>
+         <div class="hvr-border-fade">
+          <a href="/resources/<%=resource.liked[i].id%>">
+            <div class="resource-box">
+                <span class="resource-title"><%= resource.liked[i].title %></span>
+                <img class="resource-img" src="<%= resource.liked[i].img_url%>">
+                <form id="likes-button" class="like-button" method="POST" action="/myResources/unlike/<%=resource.liked[i].id%>?_method=DELETE">
+                  <button class="heart" type='submit'> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg> </button>
+                </form>
+            </div>
+          </a>
+        </div>
+         <% } %>
+        </section>
+
+        <h1 class="resource-header">My uploaded resources</h1>
+      <section class="resource-container">
+          <% for (let i = 0; i < resource.uploaded.length; i++) { %>
+            <a href="/resources/<%=resource.uploaded[i].id%>">
+              <div class="resource-box">
+                  <span class="resource-title"><%= resource.uploaded[i].title %></span>
+                  <img class="resource-img" src="<%= resource.uploaded[i].img_url %>">
+              </div>
+            </a>
+          <% } %>
+        </section>
+  </body>
+</html>

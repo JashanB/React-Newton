@@ -1,0 +1,45 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0F4C75;
+  padding: 20px 5%;
+  color: white;
+  border: 2em;
+  border-color: #1B262C;
+}
+
+i {
+  padding-right: .3em;
+  outline-width: 0;
+}
+.title {
+  display: flex;
+  font-size: 3em;
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Fredericka the Great';
+  outline-width: 0;
+
+}
+.title:hover {
+  color: rgb(189, 189, 189)
+}
+
+
+
+.user-buttons button {
+  margin-top: 1.5em;
+  font-size: 1.2em;
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  margin-left: 1em;
+  cursor: pointer;
+
+}
+
+.user-buttons{
+  display: flex;
+}
